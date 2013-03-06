@@ -1,0 +1,27 @@
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+</style>
+
+
+<div class="container">  
+  <h1><%=@user.user_name%></h1>
+  <% @tweets.each_with_index do |tweet, index| %>
+    <div style="margin: 10px"><%=index+1%>. <%=tweet.content%></div>
+    <p style="margin:0px 0 0 15px; font-size: 13px;">by <%=tweet.user.user_name%></p>
+  <%end%>
+
+  <form action="/<%=@user.user_name%>/post" method="post">
+    <input type="text" name="content">
+    <input type="submit" value="Post">
+  </form>
+</div>

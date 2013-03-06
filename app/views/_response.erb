@@ -1,0 +1,10 @@
+
+<h1 id='errors' style="color: red";></h1>
+<ol id="tweet-list">
+  <% info.each_with_index do |tweet, index| %>
+    <li>
+      <div style="margin: 10px"><%=tweet.content%></div>
+      <p style="margin:0px 0 0 15px; font-size: 13px;">by <%=tweet.user.user_name%></p>
+    </li>
+  <%end%>
+</ol>

@@ -1,0 +1,34 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="app.js"></script>
+<script src="tweet.js"></script>
+
+
+<div class="container">
+  <div class="results"></div>
+  <div class="tweets-holder">
+    <img src="../ajax-loader.gif" alt="Icon" />
+  </div>
+  <h1>Uhoh tweets are stale! Loading....</h1>
+
+  <a href="/ChrisSell3"> Check out Christopher's twitter stats !!</a>
+
+  <form id="tweet-form" action="/<%=@user.user_name%>/post" method="post">
+    <input type="text" name="content">
+    <input type="hidden" value="<%=@user.user_name%>" name="username">
+    <input type="submit" value="Post">
+  </form>
+</div>
+
+
+This is the page for people with stale tweets
