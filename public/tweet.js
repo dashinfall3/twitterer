@@ -9,9 +9,10 @@ $(document).ready(function(){
     $.post('/'+ username +'/post', serializedContent, function(data) {
 
       $('#errors').html(data['message']);
-      // if (data['success'] == true) {
+      
+      if (data['success'] == true) {
         $('#tweet-list').prepend("<li>" + data['content'] + "</li><p style='margin:0px 0 0 15px; font-size: 13px;'>by " + data['username'] + "</p>");
-      // });
+      }
     });
   });
 });
